@@ -124,7 +124,7 @@ if len(URL) == 0:
     print('Error - URL is missing, exiting now')
     exit()
 else:
-    if URL.startswith(('https://', 'http://nobita-striming.onrender.com')):
+    if URL.startswith(('https://', 'nobita-striming.onrender.com')):
         if not URL.endswith("/"):
             URL += '/'
     elif is_valid_ip(URL):
