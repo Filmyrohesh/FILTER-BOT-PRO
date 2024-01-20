@@ -100,7 +100,7 @@ WELCOME_TEXT = environ.get("WELCOME_TEXT", script.WELCOME_TEXT)
 INDEX_EXTENSIONS = [extensions.lower() for extensions in environ.get('INDEX_EXTENSIONS', 'mp4 mkv').split()]
 
 # boolean settings
-IS_VERIFY = is_enabled('IS_VERIFY', False)
+IS_VERIFY = is_enabled('IS_VERIFY', True)
 AUTO_DELETE = is_enabled('AUTO_DELETE', False)
 WELCOME = is_enabled('WELCOME', False)
 PROTECT_CONTENT = is_enabled('PROTECT_CONTENT', False)
@@ -109,7 +109,7 @@ LINK_MODE = is_enabled("LINK_MODE", True)
 AUTO_FILTER = is_enabled('AUTO_FILTER', True)
 IMDB = is_enabled('IMDB', True)
 SPELL_CHECK = is_enabled("SPELL_CHECK", True)
-SHORTLINK = is_enabled('SHORTLINK', False)
+SHORTLINK = is_enabled('SHORTLINK', True)
 
 # for stream
 IS_STREAM = is_enabled('IS_STREAM', True)
