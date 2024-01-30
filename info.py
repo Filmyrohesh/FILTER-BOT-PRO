@@ -34,7 +34,7 @@ if len(BOT_TOKEN) == 0:
 PORT = int(environ.get('PORT', '8080'))
 
 # Bot pics
-PICS = (environ.get('PICS', 'https://graph.org/file/d02bb50008a48695bd658.jpg https://graph.org/file/b2021572ba9aa8d2c0cf2.jpg https://graph.org/file/e4b8568a59cb7095d185a.jpg https://graph.org/file/aea87e4842c7b56345603.jpg https://graph.org/file/54d6f666b81bd2523ef53.jpg https://graph.org/file/c086cdb386fb0bd8a41f5.jpg https://graph.org/file/3505557916c9b26728c1a.jpg https://graph.org/file/a793b1d49c3ee95cc309e.jpg https://graph.org/file/733fa5d50bfbc5b87d749.jpg https://graph.org/file/23cf6931a2aa9d6e09b1a.jpg https://graph.org/file/702040fb6dd8a2ed01402.jpg https://graph.org/file/7a42f50e54e0f15c55044.jpg https://graph.org/file/6e7782421e33b7f6e1c79.jpg https://graph.org/file/371d56eab691dab1c83b8.jpg')).split()
+PICS = (environ.get('PICS', 'https://graph.org/file/f51d1d17eb3198bfadb72.jpg https://graph.org/file/61a21ee9ec2e587343c2e.jpg https://graph.org/file/2305d5f0185ee98a06d29.jpg https://graph.org/file/319aaf1ae9e17f3a248dc.jpg')).split()
 
 # Bot Admins
 ADMINS = environ.get('ADMINS', '5698613889')
