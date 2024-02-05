@@ -34,7 +34,7 @@ if len(BOT_TOKEN) == 0:
 PORT = int(environ.get('PORT', '8080'))
 
 # Bot pics
-PICS = (environ.get('PICS', 'https://graph.org/file/f51d1d17eb3198bfadb72.jpg https://graph.org/file/61a21ee9ec2e587343c2e.jpg https://graph.org/file/2305d5f0185ee98a06d29.jpg https://graph.org/file/319aaf1ae9e17f3a248dc.jpg')).split()
+PICS = (environ.get('PICS', '')).split()
 
 # Bot Admins
 ADMINS = environ.get('ADMINS', '5698613889')
@@ -57,9 +57,10 @@ if len(LOG_CHANNEL) == 0:
     exit()
 else:
     LOG_CHANNEL = int(LOG_CHANNEL)
+IS_FSUB = is_enabled('IS_FSUB', True)
 
 # support group
-SUPPORT_GROUP = environ.get('SUPPORT_GROUP', '-1002045221583')
+SUPPORT_GROUP = environ.get('SUPPORT_GROUP', '')
 if len(SUPPORT_GROUP) == 0:
     print('Error - SUPPORT_GROUP is missing, exiting now')
     exit()
@@ -72,19 +73,20 @@ if len(OPENAI_API) == 0:
     print('Info - OPENAI_API is empty')
 
 # MongoDB information
-DATABASE_URL = environ.get('DATABASE_URL', "mongodb+srv://filmyrohesh51:19SmDYqC1N5DqLkD@cluster0.jogzc68.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_URL = environ.get('DATABASE_URL', "")
 if len(DATABASE_URL) == 0:
     print('Error - DATABASE_URL is missing, exiting now')
     exit()
-DATABASE_NAME = environ.get('DATABASE_NAME', "Telegram")
+DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Files')
 
 # Links
-SUPPORT_LINK = environ.get('SUPPORT_LINK', 'https://t.me/MKV_FILES_ROHESH')
-UPDATES_LINK = environ.get('UPDATES_LINK', 'https://t.me/Filmy_Rohesh')
-FILMS_LINK = environ.get('FILMS_LINK', 'https://t.me/Movie_Searching_Pro')
-TUTORIAL = environ.get("TUTORIAL", "https://t.me/Filmy_Rohesh")
-VERIFY_TUTORIAL = environ.get("VERIFY_TUTORIAL", "https://t.me/Filmy_Rohesh")
+SUPPORT_LINK = environ.get('SUPPORT_LINK', 'https://t.me/HA_Bots_Support')
+OWNER_USERNAME = environ.get("OWNER_USERNAME", "https://t.me/Hansaka_Anuhas")
+UPDATES_LINK = environ.get('UPDATES_LINK', 'https://t.me/HA_Bots')
+FILMS_LINK = environ.get('FILMS_LINK', 'https://t.me/HA_Films_World')
+TUTORIAL = environ.get("TUTORIAL", "https://t.me/HA_Bots")
+VERIFY_TUTORIAL = environ.get("VERIFY_TUTORIAL", "https://t.me/HA_Bots")
 
 # Bot settings
 DELETE_TIME = int(environ.get('DELETE_TIME', 3600)) # Add time in seconds
@@ -93,9 +95,9 @@ MAX_BTN = int(environ.get('MAX_BTN', 10))
 LANGUAGES = [language.lower() for language in environ.get('LANGUAGES', 'english hindi telugu tamil kannada malayalam').split()]
 IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", script.IMDB_TEMPLATE)
 FILE_CAPTION = environ.get("FILE_CAPTION", script.FILE_CAPTION)
-SHORTLINK_URL = environ.get("SHORTLINK_URL", "https://nanolinks.in")
-SHORTLINK_API = environ.get("SHORTLINK_API", "c3524ad2b32016fe188d543c338eca0912c69df6")
-VERIFY_EXPIRE = int(environ.get('VERIFY_EXPIRE', 8640)) # Add time in seconds
+SHORTLINK_URL = environ.get("SHORTLINK_URL", "mdiskshortner.link")
+SHORTLINK_API = environ.get("SHORTLINK_API", "36f1ae74ba1aa01e5bd73bdd0bc22aa915443501")
+VERIFY_EXPIRE = int(environ.get('VERIFY_EXPIRE', 86400)) # Add time in seconds
 WELCOME_TEXT = environ.get("WELCOME_TEXT", script.WELCOME_TEXT)
 INDEX_EXTENSIONS = [extensions.lower() for extensions in environ.get('INDEX_EXTENSIONS', 'mp4 mkv').split()]
 
@@ -109,7 +111,9 @@ LINK_MODE = is_enabled("LINK_MODE", True)
 AUTO_FILTER = is_enabled('AUTO_FILTER', True)
 IMDB = is_enabled('IMDB', True)
 SPELL_CHECK = is_enabled("SPELL_CHECK", True)
-SHORTLINK = is_enabled('SHORTLINK', True)
+SHORTLINK = is_enabled('SHORTLINK', False)
+
+PAYMENT_QR = environ.get('PAYMENT_QR', 'http://graph.org/file/cacbbea472e5a48ce0d64.jpg')
 
 # for stream
 IS_STREAM = is_enabled('IS_STREAM', True)
@@ -124,7 +128,7 @@ if len(URL) == 0:
     print('Error - URL is missing, exiting now')
     exit()
 else:
-    if URL.startswith(('https://', 'http://rohesh-bots.onrender.com')):
+    if URL.startswith(('http://rohesh-bots.onrender.com', 'http://rohesh-bots.onrender.com')):
         if not URL.endswith("/"):
             URL += '/'
     elif is_valid_ip(URL):
