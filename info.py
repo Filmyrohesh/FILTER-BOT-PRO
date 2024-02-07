@@ -128,7 +128,7 @@ if len(URL) == 0:
     print('Error - URL is missing, exiting now')
     exit()
 else:
-    if URL.startswith(('https://file-to-link-3fsy.onrender.com', 'https://file-to-link-3fsy.onrender.com')):
+    if URL.startswith(('file-to-link-3fsy.onrender.com', 'file-to-link-3fsy.onrender.com')):
         if not URL.endswith("/"):
             URL += '/'
     elif is_valid_ip(URL):
