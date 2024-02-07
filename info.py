@@ -123,12 +123,12 @@ if len(BIN_CHANNEL) == 0:
     exit()
 else:
     BIN_CHANNEL = int(BIN_CHANNEL)
-URL = environ.get("URL", "http://rohesh-bots.onrender.com")
+URL = environ.get("URL", "https://file-to-link-3fsy.onrender.com")
 if len(URL) == 0:
     print('Error - URL is missing, exiting now')
     exit()
 else:
-    if URL.startswith(('http://rohesh-bots.onrender.com', 'http://rohesh-bots.onrender.com')):
+    if URL.startswith(('https://file-to-link-3fsy.onrender.com', 'https://file-to-link-3fsy.onrender.com')):
         if not URL.endswith("/"):
             URL += '/'
     elif is_valid_ip(URL):
